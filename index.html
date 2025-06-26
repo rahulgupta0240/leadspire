@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leadspire - Digital Marketing for Schools</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
     }
     .navbar {
       background-color: #ff6f00;
@@ -20,6 +23,17 @@
       color: white;
       padding: 80px 20px;
       text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: url('https://svgshare.com/i/uHj.svg') no-repeat center;
+      background-size: cover;
     }
     .section-title {
       color: #ff6f00;
@@ -33,6 +47,10 @@
       border: none;
       border-radius: 1rem;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
     }
     footer {
       background-color: #005b9f;
@@ -42,9 +60,6 @@
     }
     .highlight {
       color: #00c3e3;
-    }
-    html {
-      scroll-behavior: smooth;
     }
     .section-centered {
       text-align: center;
@@ -58,6 +73,27 @@
     .logo {
       width: 150px;
       margin-bottom: 20px;
+    }
+    .whatsapp-float, .phone-float {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    .phone-float {
+      bottom: 20px;
+      background-color: #ff6f00;
+    }
+    .whatsapp-float i, .phone-float i {
+      line-height: 55px;
     }
   </style>
 </head>
@@ -81,19 +117,18 @@
       </div>
     </div>
   </nav>
-
-  <div class="hero">
+  <div class="hero" data-aos="fade-up">
     <h1 class="display-4 fw-bold">Leadspire</h1>
     <p class="lead">Digital Marketing for Schools<br><span class="highlight">Your School. Our Strategy. Stronger Together.</span></p>
   </div>
 
-  <div id="about" class="container py-5 section-centered">
+  <div id="about" class="container py-5 section-centered" data-aos="fade-up">
     <h2 class="section-title">About Us</h2>
     <p>Leadspire is your school’s dedicated branding partner. With over 3 years of niche experience in educational marketing, we help institutions stand out through powerful storytelling, digital campaigns, and visual media.</p>
     <p>From small-town schools to ambitious educational ventures, we help you position your brand where it matters—before the eyes of parents and students.</p>
   </div>
 
-  <div id="why" class="bg-light py-5">
+  <div id="why" class="bg-light py-5" data-aos="fade-up">
     <div class="container">
       <h2 class="text-center section-title">Why Leadspire?</h2>
       <ul class="icon-list list-unstyled row row-cols-1 row-cols-md-2 g-3">
@@ -107,7 +142,7 @@
     </div>
   </div>
 
-  <div id="services" class="container py-5">
+  <div id="services" class="container py-5" data-aos="fade-up">
     <h2 class="text-center section-title">What We Do</h2>
     <div class="row g-4">
       <div class="col-md-6 col-lg-4">
@@ -153,7 +188,7 @@
     </div>
   </div>
 
-  <div id="results" class="bg-info bg-opacity-10 py-5">
+  <div id="results" class="bg-info bg-opacity-10 py-5" data-aos="fade-up">
     <div class="container text-center">
       <h2 class="section-title">Results You Can Expect</h2>
       <ul class="list-unstyled">
@@ -166,12 +201,12 @@
     </div>
   </div>
 
-  <div id="contact" class="container py-5 section-centered">
+  <div id="contact" class="container py-5 section-centered" data-aos="fade-up">
     <h2 class="section-title">Get In Touch</h2>
     <ul class="list-unstyled">
       <li><strong>Email:</strong> Leadspire9@gmail.com</li>
       <li><strong>Phone:</strong> +91 9109228036, 7440616298</li>
-      <li><strong>WhatsApp:</strong> <a href="https://wa.me/7440616298" target="_blank">+91 7440616298</a></li>
+      <li><strong>WhatsApp:</strong> <a href="https://wa.me/919109228036" target="_blank">+91 9109228036</a></li>
       <li><strong>Instagram:</strong> <a href="https://www.instagram.com/leadspire9?igsh=YWZ5M3VkdWVzaHV2" target="_blank">@leadspire9</a></li>
       <li><strong>Website:</strong> www.leadspire.com</li>
       <li><strong>Availability:</strong> PAN India | Remote & On-site Video Shoots</li>
@@ -179,10 +214,21 @@
     <p class="mt-3">Let’s tell your school’s story the way it deserves to be told.</p>
   </div>
 
+  <a href="https://wa.me/919109228036" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:+919109228036" class="phone-float">
+    <i class="fas fa-phone"></i>
+  </a>
+
   <footer>
     <p>&copy; 2025 Leadspire. All rights reserved. Crafted with creativity for the future of education.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
